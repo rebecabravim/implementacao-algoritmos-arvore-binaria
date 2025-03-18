@@ -172,6 +172,10 @@ struct NO* excluir_atual(struct NO* atual){
         no1 = no2;
         no2 = no2->dir;
     }
+    if(no1 != atual){
+       no1->dir=no2->esq;
+       no2->esq = atual->esq;
+    }
     no2->dir = atual->dir;
     free(atual);
     return no2;
